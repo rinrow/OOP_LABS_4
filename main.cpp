@@ -19,6 +19,9 @@ void print_figures_info(Array<std::shared_ptr<Figure<T>>>& figures) {
 }
 
 int main() {
+    Rhombus<double> r, rr;
+    r = rr;
+
     Array<std::shared_ptr<Figure<double>>> figures;
     
     int choice;
@@ -86,6 +89,5 @@ int main() {
     
     Array<std::shared_ptr<Figure<double>>> figure_ptr_array;
     figure_ptr_array.push_back(std::make_shared<Rhombus<double>>(Point<double>(1, 1), 3, 5));
-    
     return 0;
 }
