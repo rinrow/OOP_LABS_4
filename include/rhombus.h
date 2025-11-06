@@ -28,16 +28,9 @@ public:
     }
 
     void read(std::istream& is) override {
-        Point<T> center;
-        T horizontal, vertical;
-        std::cout << "Enter rhombus center (x y): ";
-        is >> center;
-        std::cout << "Enter horizontal diagonal length: ";
-        is >> horizontal;
-        std::cout << "Enter vertical diagonal length: ";
-        is >> vertical;
-        
-        *this = Rhombus(center, horizontal, vertical);
+        std::cout << " Enter Rhombus: 4 points\n";
+        this->readPoints(is, 4);
+        std::cout << "Rhombus created successfully!\n";
     }
 
     explicit operator double() const override {

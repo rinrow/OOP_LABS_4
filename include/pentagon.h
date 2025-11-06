@@ -36,14 +36,9 @@ public:
     }
 
     void read(std::istream& is) override {
-        Point<T> center;
-        T radius;
-        std::cout << "Enter pentagon center (x y): ";
-        is >> center;
-        std::cout << "Enter radius: ";
-        is >> radius;
-        
-        *this = Pentagon(center, radius);
+        std::cout << " Enter Pentagon: 6 points\n";
+        this->readPoints(is, 6);
+        std::cout << "Pentagon created successfully!\n";
     }
 
     explicit operator double() const override {

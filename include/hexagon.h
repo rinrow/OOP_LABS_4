@@ -4,7 +4,7 @@
 
 template<std::floating_point T>
 class Hexagon : public Figure<T> {
-private:
+private: 
     Point<T> calculateVertex(const Point<T>& center, T radius, int index) {
         T angle = 2 * M_PI * index / 6;
         return Point<T>(
@@ -12,7 +12,6 @@ private:
             center.y() + radius * std::sin(angle)
         );
     }
-
 public:
     Hexagon() = default;
 
@@ -36,14 +35,9 @@ public:
     }
 
     void read(std::istream& is) override {
-        Point<T> center;
-        T radius;
-        std::cout << "Enter hexagon center (x y): ";
-        is >> center;
-        std::cout << "Enter radius: ";
-        is >> radius;
-        
-        *this = Hexagon(center, radius);
+        std::cout << " Enter Hexagon: 6 points\n";
+        this->readPoints(is, 6);
+        std::cout << "Hexagon created successfully!\n";
     }
 
     explicit operator double() const override {

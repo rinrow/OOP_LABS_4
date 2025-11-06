@@ -10,7 +10,7 @@ private:
     size_t cap;
 
     void resize(size_t ncap) {
-        std::shared_ptr<T[]> nd(new T[ncap]);
+        std::shared_ptr<T[]> nd(std::make_shared<T[]>(ncap));
         
         for (size_t i = 0; i < sz; ++i) {
             nd[i] = std::move(data[i]);

@@ -51,6 +51,19 @@ public:
 protected:
     std::vector<std::unique_ptr<Point<T>>> dots;
 
+    void readPoints(std::istream& is, size_t cnt) {
+        dots.clear();
+        dots.resize(cnt);
+        
+        std::cout << "Enter " << cnt << " points (x y for each):\n";
+        for (size_t i = 0; i < cnt; ++i) {
+            T x, y;
+            std::cout << "Point " << i + 1 << ": ";
+            is >> x >> y;
+            dots[i] = std::make_unique<Point<T>>(x, y);
+        }
+    }
+
     // Общие методы для наследников
     Point<T> centerDefault() const {
         T x = 0, y = 0;

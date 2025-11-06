@@ -14,14 +14,11 @@ void print_figures_info(Array<std::shared_ptr<Figure<T>>>& figures) {
         std::cout << "Figure " << i << ": " << *figures[i] << std::endl;
         total_area += static_cast<double>(*figures[i]);
     }
-    
+
     std::cout << "Total area: " << total_area << std::endl << std::endl;
 }
 
 int main() {
-    Rhombus<double> r, rr;
-    r = rr;
-
     Array<std::shared_ptr<Figure<double>>> figures;
     
     int choice;
@@ -82,8 +79,10 @@ int main() {
     } while (choice != 0);
     
     // Демонстрация работы с Array для разных типов
-    std::cout << "\n--- Testing Array with different types ---\n";
-    
+    // std::cout << "\n--- Testing Array with different types ---\n";
+
+    // Figure<int> ff; Ошибка!
+
     Array<Rhombus<double>> rhombus_array;
     rhombus_array.push_back(Rhombus<double>(Point<double>(0, 0), 4, 6));
     
